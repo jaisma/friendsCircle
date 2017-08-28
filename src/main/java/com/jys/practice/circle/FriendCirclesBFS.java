@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
  * Friendship is transitive. Friend circle is a group of direct or
  * indirect(friend of a friend) friends. Find total number of friend circles.
  * 
- * 
  * Constraints: 
  * * 1 <= n <= 300 
  * * Each element of matrix is either Y or N 
@@ -39,8 +38,8 @@ import org.slf4j.LoggerFactory;
  * 	4 is a friend on his own.
  *
  */
-public class FriendsCircle {
-	private static final Logger log = LoggerFactory.getLogger(FriendsCircle.class);
+public class FriendCirclesBFS {
+	private static final Logger log = LoggerFactory.getLogger(FriendCirclesBFS.class);
 
 	public int getFriendsCircle(String[] friends) {
 		// TODO Auto-generated method stub

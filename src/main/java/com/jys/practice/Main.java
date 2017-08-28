@@ -2,10 +2,14 @@ package com.jys.practice;
 
 import java.util.Scanner;
 
-import com.jys.practice.circle.FriendsCircle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.jys.practice.circle.FriendCirclesUnion;
 
 public class Main {
-
+	private static final Logger log = LoggerFactory.getLogger(Main.class);
+	
 	public static void main(String[] args) {
 		try (Scanner scanner = new Scanner(System.in)) {
 			System.out.println("Input size:");
@@ -16,9 +20,13 @@ public class Main {
 				// create string[] of input. assume good input
 				friends[i] = scanner.nextLine();
 			}
-			FriendsCircle friendsCircle = new FriendsCircle();
-			int numberOfFriendCircles = friendsCircle.getFriendsCircle(friends);
+			
+			log.info("Using union find: ");
+			FriendCirclesUnion friendsCircle = new FriendCirclesUnion();
+			int numberOfFriendCircles = friendsCircle.getFriendCircles(friends);
 			System.out.println(numberOfFriendCircles);
+			
+			log.info("Using bfs find: ");
 		}
 	}
 }
